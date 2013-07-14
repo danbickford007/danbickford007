@@ -1,0 +1,32 @@
+%div.span8
+  %object{ :width => 550, :height => 400 }
+    %param{ :name => "movie", :value => "rails_zero_to_bootstrap.swf" }/
+    %embed{ :src => asset_path("rails_zero_to_bootstrap.swf"), :width => 850, :height => 500 }
+      
+  %br
+  %hr
+
+  %code
+    rails new tester -d postgresql
+  %br
+  %br
+  %code
+    psql template1
+  %br
+  %code
+    create database tester_development;
+  %br
+  %code
+    \\q
+  %br
+  %code
+    rails generate bootstrap:install
+  %br
+  %code
+    rails generate scaffold users username:string
+  %br
+  %code
+    rails generate bootstrap:layout Users fluid
+  %br
+  %code
+    rake db:migrate
