@@ -46,6 +46,10 @@ a:link{
   line-height:110%;
 }
 
+.content a {
+  color:black;
+}
+
 .long{
   height:600px;
 }

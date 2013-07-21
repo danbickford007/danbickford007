@@ -3,5 +3,6 @@ class RubyController < ApplicationController
   end
 
   def view
+    render '/ruby/ruby_class'
   end
 end

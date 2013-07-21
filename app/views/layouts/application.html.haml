@@ -42,11 +42,11 @@
               %br
               %hr
               =image_tag 'me.png'
-            %ul.nav.nav-list
-              %li.nav-header Tutorials
-              %li= link_to "Rails", rails_index_path 
-              %li= link_to "Ruby", "/"
-              %li= link_to "Vim", "/"
+              %ul.nav.nav-list
+                %li.nav-header Tutorials
+                %li= link_to "Rails", rails_index_path 
+                %li= link_to "Ruby", ruby_index_path
+                %li= link_to "Vim", vim_index_path
         .span9
           = bootstrap_flash
           = yield
