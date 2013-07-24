@@ -1,0 +1,10 @@
+%code
+  def varargs(arg1, *rest)
+  "arg1=#{arg1}. rest=#{rest.inspect}"
+  end
+  varargs("one")
+  varargs("one", "two")
+  varargs "one", "two", "three"
+  # => arg1=one.  rest=[]
+  # => arg1=one.  rest=["two"]
+  # => arg1=one.  rest=["two", "three"]

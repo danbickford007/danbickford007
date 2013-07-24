@@ -1,0 +1,69 @@
+%ul
+  %li :e filename   Open a new file. 
+  %li :w filename   Save changes to a file. 
+  %li :q  Quit Vim. If you have unsaved changes, Vim refuses to exit.
+  %li :q!   Exit Vim without saving changes.
+  %li :wq   Write the file and exit.
+  %li :x  write the file and exit if you've made changes to the file. 
+  %li k or Up Arrow   Move the cursor up one line.
+  %li j or Down Arrow   Down one line.
+  %li h or Left Arrow   Left one character.
+  %li l or Right Arrow  Right one character.
+  %li e   To the end of a word.
+  %li E   To the end of a whitespace-delimited word.
+  %li b   To the beginning of a word.
+  %li B   To the beginning of a whitespace-delimited word.
+  %li 0   To the beginning of a line.
+  %li ^   To the first non-whitespace character of a line.
+  %li $   To the end of a line.
+  %li H   To the first line of the screen.
+  %li M   To the middle line of the screen.
+  %li L   To the the last line of the screen.
+  %li :n  Jump to line number n. For example, to jump to line 42, you'd type :42
+  %li i   Insert before cursor.
+  %li I   Insert to the start of the current line.
+  %li a   Append after cursor.
+  %li A   Append to the end of the current line.
+  %li o   Open a new line below and insert.
+  %li O   Open a new line above and insert.
+  %li C   Change the rest of the current line.
+  %li r   Overwrite one character. 
+  %li R   Enter insert mode but replace characters rather than inserting.
+  %li The ESC key   Exit insert/overwrite mode and go back to command mode.
+  %li x   Delete characters under the cursor.
+  %li X   Delete characters before the cursor.
+  %li dd or :d  Delete the current line.
+  %li v   Start highlighting characters. 
+  %li V   Start highlighting lines.
+  %li ~   Change the case of characters. 
+  %li -> (V)   Shift right (indent).
+  %li <- (V)   Shift left (de-indent).
+  %li c (V)   Change the highlighted text.
+  %li y (V)   Yank the highlighted text. 
+  %li d (V)   Delete the highlighted text. 
+  %li yy or :y or Y   Yank the current line. 
+  %li dd or :d  Delete the current line. 
+  %li p   Put the text you yanked or deleted. 
+  %li P   Put characters before the cursor. 
+  %li u   Undo the last action.
+  %li U   Undo all the latest changes that were made to the current line.
+  %li Ctrl + r  Redo.
+  %li /pattern  Search the file for pattern.
+  %li n   Scan for next search match in the same direction.
+  %li N   Scan for next search match but opposite direction.
+  %li Replace
+  %li :rs/foo/bar/a   Substitute foo with bar. 
+  %li The range (r) can be
+  %li nothing   Work on current line only.
+  %li number  Work on the line whose number you give.
+  %li %   The whole file.
+  %li g   Replace all occurrences in the line. 
+  %li i   Ignore case for the search pattern.
+  %li I   Don't ignore case.
+  %li c   Confirm each substitution. 
+  %li :452s/foo/bar/  Replace the first occurrence of the word foo with bar on line number 452.
+  %li :s/foo/bar/g  Replace every occurrence of the word foo with bar on current line.
+  %li :%s/foo/bar/g   Replace every occurrence of the word foo with bar in the whole file.
+  %li :%s/foo/bar/gi  The same as above, but ignore the case of the pattern you want to substitute. This replaces foo, FOO, Foo, and so on.
+  %li :%s/foo/bar/gc  Confirm every substitution.
+  %li :%s/foo/bar/c   For each line on the file, replace the first occurrence of foo with bar and confirm every substitution.

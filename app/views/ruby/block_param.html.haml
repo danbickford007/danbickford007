@@ -1,0 +1,18 @@
+parameters to block are always local to block
+%br
+%br
+%code
+  num = 420
+  %br
+  [1, 2, 3].each |num|
+  %br
+  &emsp;num *= 1000000
+  %br
+  end
+  %br
+  %br
+  p num
+  %br
+  = '=> 420'
+%br
+num is local to block and wont overwrite num

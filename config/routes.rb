@@ -1,8 +1,8 @@
 Danbickford007::Application.routes.draw do
   get "vim/index"
-  get "vim/view"
+  get "vim/view/:category" => "vim#view", :as=>"vim"
   get "ruby/index"
-  get "ruby/view"
+  get "ruby/view/:category" => "ruby#view", :as=>"ruby"
   get "rails/index"
   get "rails/view/:category" => "rails#view", :as=>"rails"
   root :to=>"users#index"

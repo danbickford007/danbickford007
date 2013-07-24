@@ -3,5 +3,6 @@ class VimController < ApplicationController
   end
 
   def view
+    render '/vim/commands'
   end
 end

@@ -17,6 +17,10 @@ html body {
   font-size:1.2em;
 }
 
+.index a {
+  font-size:1.4em;
+}
+
 ul{
   list-style-type:none;
 }
@@ -61,3 +65,4 @@ a:link{
 .right{
   float:right;
 }
+

@@ -3,6 +3,6 @@ class RubyController < ApplicationController
   end
 
   def view
-    render '/ruby/ruby_class'
+    render params[:category]
   end
 end
