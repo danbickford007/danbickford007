@@ -1,0 +1,126 @@
+%h3
+  Routes Review
+
+To map your root of the application, lets say to the users controller, index action...you would issue the following
+%br
+%br
+%code
+  root :to=>'users#index'
+%br
+%br
+To get all of the restful resources for a controller you issue the following
+%br
+%br
+%code
+  resources :users
+%br
+%br
+To view your routes, in terminal type 
+%br
+%br
+%code
+  rake routes
+%br
+%br
+%table.code
+  %tr
+    %td Prefix Verb   
+    %td URI Pattern               
+    %td Controller#Action
+  %tr
+    %td root GET    
+    %td /                         
+    %td posts#index
+  %tr
+    %td posts GET    
+    %td /posts(.:format)          
+    %td posts#index
+  %tr
+    %td POST   
+    %td /posts(.:format)          
+    %td posts#create
+  %tr
+    %td new_post GET    
+    %td /posts/new(.:format)      
+    %td posts#new
+  %tr
+    %td edit_post GET    
+    %td /posts/:id/edit(.:format) 
+    %td posts#edit
+  %tr
+    %td post GET    
+    %td /posts/:id(.:format)      
+    %td posts#show
+  %tr
+    %td PATCH  
+    %td /posts/:id(.:format)      
+    %td posts#update
+  %tr
+    %td PUT    
+    %td /posts/:id(.:format)      
+    %td posts#update
+  %tr
+    %td DELETE 
+    %td /posts/:id(.:format)      
+    %td posts#destroy
+%br
+%br
+On the far left you have helpers, such as edit_post_path and edit_post_url.  In the middle you have the actual path that will show in your url 
+bar, you can also use this to route but you will bypass the awesome rails routing.  On the right is the controller action the route is mapped to.
+%br
+%br
+You can nest your routes to make more dynamic routing, but it isn't advised to nest more than 2 deep
+%br
+%br
+%div.code{:style=>'width:200px'}
+  resources: users do
+  %br
+  %br
+  &emsp;resources :bids
+  %br 
+  %br
+  end 
+%br
+%br
+When using url helpers, you don't have to pass in the id, just pass in the object...
+%br
+%br
+%code
+  link_to "users post", user_post_path(user, post)
+%br
+%br 
+You can dry up your routes with concerns, this goes as follows
+%br
+Not Dry
+%br
+%br
+%div.code{:style=>'width:500px'}
+  resources:users do
+  %br
+  &emsp;resources :posts
+  %br
+  &emsp;resources :comments
+  %br
+  &emsp;resources :image_attachments, only: :index
+  %br
+  end
+  %br
+  resources:posts do 
+  %br
+  &emsp;resources :comments
+  %br
+  end
+%br
+%br
+You can now DRY this up like so
+%br
+%div.code{:style=>'width:700px'}
+  resources:users, concerns:[:commentable,:image_attachable] do
+  %br 
+  &emsp; resources :posts
+  %br
+  end
+  %br
+  resources:posts, concerns::commentable
+%br
+%br

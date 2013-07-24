@@ -65,4 +65,16 @@ a:link{
 .right{
   float:right;
 }
+code{
+  margin:10px;
+}
 
+.code{
+  background-color: #F7F7F9;
+  border: 1px solid #E1E1E8;
+  color: #DD1144;
+  padding: 2px 4px;
+  white-space: nowrap;
+  margin:10px;
+  padding:10px;
+}
